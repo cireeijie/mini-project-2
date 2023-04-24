@@ -337,7 +337,6 @@ nav {
 /* Shop Page End */
 
 /* Contact Page Start */
-
 .contact-page {
     background-image: url(/assets/images/background-image.jpg);
     background-size: cover;
@@ -576,5 +575,4 @@ form input {
     scale: 1.1;
     transition: all 0.3s ease;
 }
-
 /* Contact Page End */
