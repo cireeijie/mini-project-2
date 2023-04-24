@@ -92,7 +92,9 @@ nav {
 
 /* Header End */
 
-section {
+/* Shop Page Start */
+
+#shopSection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,6 +129,9 @@ section {
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 #featured .tag {
@@ -321,3 +326,5 @@ section {
     height: auto;
     margin-bottom: -7px;
 }
+
+/* Shop Page End */
