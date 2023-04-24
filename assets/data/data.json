@@ -1,0 +1,115 @@
+[
+    {
+        "id": "1",
+        "name": "Tteokbokki",
+        "desc": "Tteokbokki is a popular Korean street food dish made from chewy rice cakes stir-fried with spicy gochujang sauce and various vegetables. It's a favorite among locals for its addictive spiciness and satisfying texture.",
+        "image": "assets/images/products/tteokbokki.png",
+        "category": "",
+        "isFeatured": true,
+        "prices": {
+            "small": "₱200",
+            "medium": "₱300"
+        }
+    },
+    {
+        "id": "2",
+        "name": "Chicken Kimbap",
+        "desc": "",
+        "image": "assets/images/products/kimbap/kimbap-1.png",
+        "category": "kimbap",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱120"
+        }
+    },
+    {
+        "id": "3",
+        "name": "Spam Kimbap",
+        "desc": "",
+        "image": "assets/images/products/kimbap/kimbap-2.png",
+        "category": "kimbap",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱120"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Baked Spam Kimbap",
+        "desc": "",
+        "image": "assets/images/products/kimbap/kimbap-3.png",
+        "category": "kimbap",
+        "isFeatured": false,
+        "prices": {
+            "small": "₱150",
+            "medium": "₱300"
+        }
+    },
+    {
+        "id": "5",
+        "name": "Baked Spicy Tuna Kimbap",
+        "desc": "",
+        "image": "assets/images/products/kimbap/kimbap-4.png",
+        "category": "kimbap",
+        "isFeatured": false,
+        "prices": {
+            "small": "₱150",
+            "medium": "₱300"
+        }
+    },
+    {
+        "id": "6",
+        "name": "Dakgangjeong",
+        "desc": "",
+        "image": "assets/images/products/ricemeals/rice-1.png",
+        "category": "ricemeal",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱59"
+        }
+    },
+    {
+        "id": "7",
+        "name": "Cheese Buldak",
+        "desc": "",
+        "image": "assets/images/products/ricemeals/rice-2.png",
+        "category": "ricemeal",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱69"
+        }
+    },
+    {
+        "id": "8",
+        "name": "Pork Bulgogi",
+        "desc": "",
+        "image": "assets/images/products/ricemeals/rice-3.png",
+        "category": "ricemeal",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱89"
+        }
+    },
+    {
+        "id": "9",
+        "name": "Beef Bulgogi",
+        "desc": "",
+        "image": "assets/images/products/ricemeals/rice-4.png",
+        "category": "ricemeal",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱99"
+        }
+    },
+    {
+        "id": "10",
+        "name": "Bibimbap",
+        "desc": "",
+        "image": "assets/images/products/ricemeals/rice-5.png",
+        "category": "ricemeal",
+        "isFeatured": false,
+        "prices": {
+            "regular": "₱120"
+        }
+    }
+]

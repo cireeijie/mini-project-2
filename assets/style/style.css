@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header Start */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-container {
+    max-width: 1420px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image img {
+    width: 100px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text .brand {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 30px;
+    color: #C21807;
+}
+
+.logo-text .sub {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-menu ul {
+    display: flex;
+    gap: 44px;
+}
+
+.desktop-menu ul li {
+    list-style-type: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.desktop-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Header End */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0;
+}
+
+.row-container {
+    max-width: 1420px;
+    width: 80%;
+}
+
+.page-title h1 {
+    color: #C21807;
+    font-size: 35px;
+}
+
+.page-title .sub {
+    color: white;
+    font-size: 14px;
+}
+
+.featured-section {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+#featured {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#featured .tag {
+    position: absolute;
+    top: 20px;
+    background-color: #C21807;
+    color: white;
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+.featured-price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.featured-price .prices {
+    height: 70px;
+    width: 70px;
+    gap: 5px;
+}
+
+.featured-price .prices .size {
+    font-size: 12px;
+}
+
+.featured-price .prices .price {
+    font-size: 18px;
+}
+
+#featured .product-info {
+    background-color: rgba(194, 24, 7, .8);
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+.info .name {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.info .desc {
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 300;
+}
+
+.f-add-to-cart {
+    width: 400px;
+    color: #C21807;
+    background-color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 100px;
+}
+
+.kimbap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.kimbap .product-title h1{
+    color: #C21807;
+}
+
+.kimbap .product-title .sub {
+    color: white;
+    font-size: 14px;
+}
+
+.kimbap .products {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.product-container {
+    position: relative;  
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.price-container {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3px;
+}
+
+.prices {
+    height: 50px;
+    width: 50px;
+    background-color: #C21807;
+    border-radius: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prices .size {
+    text-transform: capitalize;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+.prices .price {
+    margin-top: 3px;
+    font-size: 16px;
+    line-height: 14px;
+    font-weight: 700;
+}
+
+.product-container .product-info {
+    background-color: #1E1E1E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    height: 70px;
+    padding: 10px;
+}
+
+.product-container .product-info .product-name {
+    color: #C21807;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.product-container .product-info .variations {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.product-container .add-to-cart {
+    background-color: #C21807;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.rice-meal {
+    margin-top: 20px;
+}
+
+.rice-meal .product-title h1 {
+    color: #C21807;
+}
+
+.rice-meal .product-title .sub {
+    color: white;
+    font-size: 14px;
+}
+
+.rice-meal .products {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.rice-meal .product-container {
+    width: 284px;
+}
+
+.rice-meal .product-container .image-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: -7px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Delight Davao</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <script src="https://kit.fontawesome.com/8876338ff1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="row-container menu-container">
+            <div class="logo">
+                <a href="">
+                    <div class="logo-image">
+                        <img src="assets/images/KDD-icon.png" alt="">
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand">Korean Delight Davao</span>
+                        <span class="sub">Absolutely delightful!</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="menu">
+                <div class="desktop-menu">
+                    <ul class="nav-items">
+                        <li class="menu-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">About Us</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Shop</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fa-solid fa-bars dropdown-menu"></i>
+                    <ul class="nav-items">
+                        <li class="menu-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">About Us</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Shop</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="row-container">
+            <div class="page-title">
+                <h1>Shop</h1>
+                <span class="sub">Experience the Best of Korean Cuisine at Home</span>
+            </div>
+        </div>
+        <div class="row-container featured-section">
+            <div id="featured" class=""></div>
+            <div class="product kimbap">
+                <div class="product-title">
+                    <h1>Kimbap</h1>
+                    <span class="sub">The Perfect Korean Snack for On-the-Go!</span>
+                </div>
+                <div id="kimbap" class="products"></div>
+            </div>
+        </div>
+        <div class="row-container product-section">
+            <div class="product rice-meal">
+                <div class="product-title">
+                    <h1>Rice Meals</h1>
+                    <span class="sub">Delicious Korean Rice Dishes to Satisfy Your Cravings</span>
+                </div>
+                <div id="riceMeal" class="products"></div>
+            </div>
+        </div>
+    </section>
+
+    <script defer type="module" src="assets/script/GetData.js" async></script>
+    <script defer type="module" src="assets/script/app.js" async></script>
+    <script defer type="module" src="assets/script/featured.js" async></script>
+    <script defer type="module" src="assets/script/products.js" async></script>
+
+</body>
+</html>
