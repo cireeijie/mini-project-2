@@ -2,6 +2,25 @@ import getData from "./GetData.js"
 import featuredProduct from "./featured.js"
 import productDisplay from "./products.js"
 
+
+// Navbar JS
+
+const navbar = document.querySelector('#navBar');
+let top = navbar.offsetTop;
+console.log(top);
+function stickyNavBar() {
+    if(window.scrollY > top) {
+        navbar.classList.add('sticky');
+    }
+    else {
+        navbar.classList.remove('sticky');
+    }
+}
+
+window.addEventListener('scroll', stickyNavBar);
+
+
+// Shop Page JS Start
 const loadShopPage = async () => {
     const products = await getData();
 
@@ -25,6 +44,7 @@ const loadShopPage = async () => {
 
 }
 
+// Shop Page JS End
 
 loadShopPage();
 
