@@ -68,9 +68,11 @@ else {
 
 function addToCartList(e) {
     if(e.target.classList == 'add-to-cart') {
+        const cartBell = new Audio('assets/sound/bell.mp3');
+        cartBell.play();
+
         const products = JSON.parse(localStorage.getItem("products"));
         const getItem = products.filter(product => product.id === e.target.id);
-        console.log(e.target.id);
 
         const checkItem = orders.filter(item => item.id == getItem[0].id);
         
@@ -106,10 +108,11 @@ const orderItems = document.querySelector('#orders');
 const total = document.querySelector("#total");
 
 orderItems.addEventListener('change', changeVar);
+orderItems.addEventListener('click', deleteItem)
 
 function changeVar(e) {
     if(e.target.classList == 'item-var') {
-        const getId = e.target.id.slice(-1);
+        const getId = e.target.id.match(/\d/g);
         const value = e.target.value;
         const price = document.querySelector(`#price${getId}`);
         price.innerHTML = `₱${value}`;
@@ -117,7 +120,23 @@ function changeVar(e) {
     }
 
     if(e.target.classList == 'quantity') {
-        const getId = e.target.id.slice(-1);
+        updatePrice();
+    }
+}
+
+function deleteItem(e) {
+    if(e.target.classList[0] == 'delete-btn') {
+        const cartItems = document.querySelector('#qty');
+        cartItems.innerHTML = orderItems.childElementCount - 1;
+
+        const itemId = e.target.id.match(/\d/g);
+        let id = itemId.join('');
+        const delItem = orders.filter(item => item.id != id)
+
+        orders = delItem;
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        updateCart();
         updatePrice();
     }
 }
@@ -138,8 +157,26 @@ function updatePrice() {
 
 updatePrice();
 
+function updateCart() {
+    const kids = orderItems.childElementCount;
+    for(let i = 0; i < kids; i++) {
+        orderItems.firstChild.remove();
+    }
+
+    orders.forEach(order => {
+        addToCart(order.name, Object.entries(order.prices), order.id, order.qty)
+    });
+}
+
+updateCart()
+
+const closeCart = document.querySelector('.close-cart');
 const openCart = document.querySelector('#cartToggle');
 const cart = document.querySelector('#orderList');
+
+closeCart.addEventListener('click', () => {
+    cart.classList.remove('cart-visible');
+})
 
 openCart.addEventListener('click', () => {
     cart.classList.toggle('cart-visible');
@@ -148,8 +185,3 @@ openCart.addEventListener('click', () => {
 
 
 // Add to Cart End
-
-
-
-
-

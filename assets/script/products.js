@@ -24,7 +24,7 @@ function productDisplay(id, name, image, prices, section) {
             if(x == prices[i].length -1) {
                 const price = document.createElement('span');
                 price.classList.add('price')
-                price.innerHTML = prices[i][x];
+                price.innerHTML = `₱${prices[i][x]}`;
                 priceContainer.appendChild(price);
             }
             else {

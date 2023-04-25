@@ -207,7 +207,7 @@
     <div class="shopping-cart">
         <div id="cartToggle" class="toggle-icon">
             <span id="qty" class="qty">0</span>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="shop-cart fa-solid fa-cart-shopping"></i>
         </div>
         <div id="orderList" class="order-container">
             <div class="labels">
@@ -215,11 +215,16 @@
                 <p class="label-size">Size</p>
                 <p class="label-qty">QTY</p>
                 <p class="label-price">Price</p>
+                <i class="close-cart fa-solid fa-xmark"></i>
             </div>
             <div id="orders" class="orders"></div>
             <div class="total">
                 <span>Total:</span>
                 <span id="total">₱0</span>
+                <button id="checkoutBtn">
+                    <span>Checkout</span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
             </div>
         </div>
         

@@ -40,10 +40,10 @@ function addToCart(name, prices, id, qty) {
     order.appendChild(itemPrice);
 
     const deleteItem = document.createElement('i');
+    deleteItem.classList.add('delete-btn');
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-xmark');
-    deleteItem.setAttribute("id", "deleteBtn");
-    deleteItem.classList.add('delete-btn');
+    deleteItem.setAttribute("id", `deleteBtn${id}`);
     order.appendChild(deleteItem);
 
     orderList.appendChild(order);
