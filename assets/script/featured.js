@@ -47,7 +47,7 @@ function featuredProduct(id, name, image, desc, prices, section) {
     info.appendChild(description);
 
     const addToCart = document.createElement('a');
-    addToCart.classList.add('f-add-to-cart');
+    addToCart.classList.add('add-to-cart');
     addToCart.setAttribute('id', id);
     addToCart.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
     productInfo.appendChild(addToCart)

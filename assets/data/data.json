@@ -7,8 +7,8 @@
         "category": "",
         "isFeatured": true,
         "prices": {
-            "small": "₱200",
-            "medium": "₱300"
+            "small": "200",
+            "medium": "300"
         }
     },
     {
@@ -19,7 +19,7 @@
         "category": "kimbap",
         "isFeatured": false,
         "prices": {
-            "regular": "₱120"
+            "regular": "120"
         }
     },
     {
@@ -30,7 +30,7 @@
         "category": "kimbap",
         "isFeatured": false,
         "prices": {
-            "regular": "₱120"
+            "regular": "120"
         }
     },
     {
@@ -41,8 +41,8 @@
         "category": "kimbap",
         "isFeatured": false,
         "prices": {
-            "small": "₱150",
-            "medium": "₱300"
+            "small": "150",
+            "medium": "300"
         }
     },
     {
@@ -53,8 +53,8 @@
         "category": "kimbap",
         "isFeatured": false,
         "prices": {
-            "small": "₱150",
-            "medium": "₱300"
+            "small": "150",
+            "medium": "300"
         }
     },
     {
@@ -65,7 +65,7 @@
         "category": "ricemeal",
         "isFeatured": false,
         "prices": {
-            "regular": "₱59"
+            "regular": "59"
         }
     },
     {
@@ -76,7 +76,7 @@
         "category": "ricemeal",
         "isFeatured": false,
         "prices": {
-            "regular": "₱69"
+            "regular": "69"
         }
     },
     {
@@ -87,7 +87,7 @@
         "category": "ricemeal",
         "isFeatured": false,
         "prices": {
-            "regular": "₱89"
+            "regular": "89"
         }
     },
     {
@@ -98,7 +98,7 @@
         "category": "ricemeal",
         "isFeatured": false,
         "prices": {
-            "regular": "₱99"
+            "regular": "99"
         }
     },
     {
@@ -109,7 +109,7 @@
         "category": "ricemeal",
         "isFeatured": false,
         "prices": {
-            "regular": "₱120"
+            "regular": "120"
         }
     }
 ]

@@ -1,13 +1,12 @@
 import getData from "./GetData.js"
 import featuredProduct from "./featured.js"
 import productDisplay from "./products.js"
+import addToCart from "./orderList.js";
 
-
-// Navbar JS
-
+// Navbar JS Start
 const navbar = document.querySelector('#navBar');
 let top = navbar.offsetTop;
-console.log(top);
+
 function stickyNavBar() {
     if(window.scrollY > top) {
         navbar.classList.add('sticky');
@@ -18,6 +17,8 @@ function stickyNavBar() {
 }
 
 window.addEventListener('scroll', stickyNavBar);
+
+// Navbar Js End
 
 
 // Shop Page JS Start
@@ -44,8 +45,111 @@ const loadShopPage = async () => {
 
 }
 
+loadShopPage();
+
 // Shop Page JS End
 
-loadShopPage();
+// Add toCart Start
+const addToCartBtn = document.querySelector("#shopSection");
+
+addToCartBtn.addEventListener('click', addToCartList)
+
+let orders = await JSON.parse(localStorage.getItem("orders"));
+
+if(orders != null) {
+    orders = JSON.parse(localStorage.getItem("orders"));
+    await orders.forEach(order => {
+        addToCart(order.name, Object.entries(order.prices), order.id, order.qty)
+    })
+}
+else {
+    orders = [];
+}
+
+function addToCartList(e) {
+    if(e.target.classList == 'add-to-cart') {
+        const products = JSON.parse(localStorage.getItem("products"));
+        const getItem = products.filter(product => product.id === e.target.id);
+        console.log(e.target.id);
+
+        const checkItem = orders.filter(item => item.id == getItem[0].id);
+        
+        if(checkItem.length >= 1) {
+            const getOrder = orders.filter(order => order.id != getItem[0].id);
+            const qtyContainer = document.querySelector(`#item${getItem[0].id}`);
+
+            checkItem[0].qty = parseFloat(checkItem[0].qty) + 1;
+            qtyContainer.value = checkItem[0].qty;
+
+            getOrder.push(checkItem[0]);
+            localStorage.setItem("orders", JSON.stringify(getOrder));
+            updatePrice();
+        }
+        else {
+            let orderItem = {
+                id: getItem[0].id,
+                name: getItem[0].name,
+                qty: 1,
+                prices: getItem[0].prices
+            }
+    
+            addToCart(orderItem.name, Object.entries(orderItem.prices), orderItem.id, orderItem.qty);
+    
+            orders.push(orderItem);
+            localStorage.setItem("orders", JSON.stringify(orders));
+            updatePrice();
+        } 
+    }
+}
+
+const orderItems = document.querySelector('#orders');
+const total = document.querySelector("#total");
+
+orderItems.addEventListener('change', changeVar);
+
+function changeVar(e) {
+    if(e.target.classList == 'item-var') {
+        const getId = e.target.id.slice(-1);
+        const value = e.target.value;
+        const price = document.querySelector(`#price${getId}`);
+        price.innerHTML = `₱${value}`;
+        updatePrice();
+    }
+
+    if(e.target.classList == 'quantity') {
+        const getId = e.target.id.slice(-1);
+        updatePrice();
+    }
+}
+
+function updatePrice() {
+    const prices = orderItems.childNodes;
+    const orderPrice = Object.entries(prices);
+    let priceTotal = 0;
+
+    orderPrice.forEach(price => {
+        const itemPrice = price[1].childNodes[3].innerText;
+        const itemQty = price[1].childNodes[2].value;
+        priceTotal += (parseFloat(itemPrice.substring(1)) * parseFloat(itemQty));
+        
+    });
+    total.innerHTML = `₱${priceTotal}`;
+}
+
+updatePrice();
+
+const openCart = document.querySelector('#cartToggle');
+const cart = document.querySelector('#orderList');
+
+openCart.addEventListener('click', () => {
+    cart.classList.toggle('cart-visible');
+    openCart.classList.toggle('to-back');
+});
+
+
+// Add to Cart End
+
+
+
 
 

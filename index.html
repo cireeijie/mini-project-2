@@ -28,16 +28,16 @@
                 <div class="desktop-menu">
                     <ul class="nav-items">
                         <li class="menu-item">
-                            <a href="#">Home</a>
+                            <a href="#homePage">Home</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">About Us</a>
+                            <a href="#aboutPage">About Us</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Shop</a>
+                            <a href="#shopTarget">Shop</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Contact Us</a>
+                            <a href="#contactPage">Contact Us</a>
                         </li>
                         <li class="menu-item">
                             <a href="">
@@ -50,16 +50,16 @@
                     <i class="fa-solid fa-bars dropdown-menu"></i>
                     <ul class="nav-items">
                         <li class="menu-item">
-                            <a href="#">Home</a>
+                            <a href="#homePage">Home</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">About Us</a>
+                            <a href="#aboutPage">About Us</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Shop</a>
+                            <a href="#shopTarget">Shop</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Contact Us</a>
+                            <a href="#contactPage">Contact Us</a>
                         </li>
                         <li class="menu-item">
                             <a href="">
@@ -73,105 +73,164 @@
     </header>
     <!-- Header End -->
 
-    <!-- Shop Page Start -->
-    <section id="shopSection">
-        <div class="row-container">
-            <div class="page-title">
-                <h1>Shop</h1>
-                <span class="sub">Experience the Best of Korean Cuisine at Home</span>
+    <div id="horizontalScroll" class="horizontal-scroll-container">
+        <!-- Home Page Start -->
+        <section class="homepage" id="homePage">
+            <div class="div-homepage">
+                <div>
+                    <span class="h1-text textWhite">Satisfy Your </span>
+                    <span class="h1-text textRed"> Korean Food </span>
+                    <span class="h1-text textWhite"> Cravings! </span>
+                    <p>Korean Delight Davao aims to satisfy every Korean food cravings <br>with delightful meals. Guaranteed fresh!</p>
+                </div>
+                <div class="btnDiv">
+                    <a class="btnNoBg" href="#">About Us</a>
+                    <a class="btnRed" href="#">Shop Now</a>
+                </div>
             </div>
-        </div>
-        <div class="row-container featured-section">
-            <div id="featured" class=""></div>
-            <div class="product kimbap">
-                <div class="product-title">
-                    <h1>Kimbap</h1>
-                    <span class="sub">The Perfect Korean Snack for On-the-Go!</span>
+        </section>
+        <!-- Home Page End -->
+
+        <!-- About Page Start -->
+        <section class="about-page" id="aboutPage">
+            <div class="div-container">
+                <div class="div-about">
+                    <span class="h1-text textRed">About Us</span><br>
+                    <span class="second-text">Bringing the Authentic Flavors of Korea to Your Table</span>
+                    <p>Welcome to Korean Delight Davao, your go-to destination for authentic Korean cuisine in the heart of Davao City. We are a family-owned business committed to providing our customers with delicious, high-quality Korean dishes made with fresh, locally sourced ingredients.</p>
+                    <p>Our menu features a wide variety of traditional Korean dishes, from classic favorites like bibimbap and bulgogi to lesser-known delicacies like jajangmyeon.</p>
+                    <p>At Korean Delight Davao, we pride ourselves on providing a warm and welcoming atmosphere for our customers. Our friendly staff are always happy to help you choose the perfect dish or answer any questions you may have about our menu.</p>
+                    <p>Whether you're a Korean food enthusiast or a first-time customer, we invite you to come experience the flavors of Korea at Korean Delight Davao. We look forward to serving you soon!</p>
                 </div>
-                <div id="kimbap" class="products"></div>
             </div>
-        </div>
-        <div class="row-container product-section">
-            <div class="product rice-meal">
-                <div class="product-title">
-                    <h1>Rice Meals</h1>
-                    <span class="sub">Delicious Korean Rice Dishes to Satisfy Your Cravings</span>
+        </section>
+        <!-- About Page End -->
+
+        <!-- Shop Page Start -->
+        <section id="shopSection">
+            <div id="shopTarget" class="target"></div>
+            <div class="vertical-scroll">
+                <div class="row-container">
+                    <div class="page-title">
+                        <h1>Shop</h1>
+                        <span class="sub">Experience the Best of Korean Cuisine at Home</span>
+                    </div>
                 </div>
-                <div id="riceMeal" class="products"></div>
+                <div class="row-container featured-section">
+                    <div id="featured" class=""></div>
+                    <div class="product kimbap">
+                        <div class="product-title">
+                            <h1>Kimbap</h1>
+                            <span class="sub">The Perfect Korean Snack for On-the-Go!</span>
+                        </div>
+                        <div id="kimbap" class="products"></div>
+                    </div>
+                </div>
+                <div class="row-container product-section">
+                    <div class="product rice-meal">
+                        <div class="product-title">
+                            <h1>Rice Meals</h1>
+                            <span class="sub">Delicious Korean Rice Dishes to Satisfy Your Cravings</span>
+                        </div>
+                        <div id="riceMeal" class="products"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Shop Page End -->
+        </section>
+        <!-- Shop Page End -->
 
-     <!-- Contact Page Start -->
-     <section class="contact-page" id="contactPage">
-        <div class="contact-page-context">
-            <div class="contact-context">
-                <div class="contact-text">
-                    <span class="contact-us">Contact Us</span>
-                    <span class="get-touch">Get in Touch with Us</span>
-                </div>
+        <!-- Contact Page Start -->
+        <section class="contact-page" id="contactPage">
+            <div class="contact-page-context">
+                <div class="contact-context">
+                    <div class="contact-text">
+                        <span class="contact-us">Contact Us</span>
+                        <span class="get-touch">Get in Touch with Us</span>
+                    </div>
 
-                <div class="contact-form">
-                    <form action="#" method="get" id="contactForm">
-                        <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
-                        <input type="text" name="eMail" id="eMail" placeholder="E-mail" required>
-                        <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
-                        <input type="button" value="Submit" id="submitBtn">
-                    </form>
-                </div>
+                    <div class="contact-form">
+                        <form action="#" method="get" id="contactForm">
+                            <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+                            <input type="text" name="eMail" id="eMail" placeholder="E-mail" required>
+                            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                            <input type="button" value="Submit" id="submitBtn">
+                        </form>
+                    </div>
 
-                <div class="contact-info">
-                    <div class="contact-location">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="location-text">
-                            <span>36-B Santos Land Marketing Subdivision, Bangkal, 800 Davao City, Philippines</span>
+                    <div class="contact-info">
+                        <div class="contact-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="location-text">
+                                <span>36-B Santos Land Marketing Subdivision, Bangkal, 800 Davao City, Philippines</span>
+                            </div>
+                        </div>
+                        <div class="contact-phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>0912-345-6789</span>
+                        </div>
+                        <div class="contact-mail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>koreandelightdavao@gmail.com</span>
                         </div>
                     </div>
-                    <div class="contact-phone">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>0912-345-6789</span>
-                    </div>
-                    <div class="contact-mail">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>koreandelightdavao@gmail.com</span>
-                    </div>
-                </div>
 
-                <div class="contact-connect">
-                    <span>Stay Connected with Us on Social Media</span>
-                    <div class="contact-socials">
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-instagram"></i>
+                    <div class="contact-connect">
+                        <span>Stay Connected with Us on Social Media</span>
+                        <div class="contact-socials">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
                     </div>
                 </div>
+                <div class="copyright">
+                    <span>Copyright&copy 2023 | Group 9</span>
+                </div>
             </div>
-            <div class="copyright">
-                <span>Copyright&copy 2023 | Group 9</span>
+            <div class="contact-image">
+                <img src="assets/images/korean-food-jajangmyeon-noodle-with-fermented-black-beans-sauce.png">
             </div>
-        </div>
-        <div class="contact-image">
-            <img src="./assets/images/korean-food-jajangmyeon-noodle-with-fermented-black-beans-sauce 1.png">
-        </div>
-    </section>
+        </section>
 
 
-    <div class="modal" id="modalContainer">
-        <h3>Your message has been received!</h1>
-        <div class="message-reply">
-            <span>We will reply to you as soon as possible.</span>
-            <span>Thank you for contacting us!</span>
+        <div class="modal" id="modalContainer">
+            <h3>Your message has been received!</h1>
+            <div class="message-reply">
+                <span>We will reply to you as soon as possible.</span>
+                <span>Thank you for contacting us!</span>
+            </div>
+            <button id="okBtn">OK</button>
         </div>
-        <button id="okBtn">OK</button>
+
+        <!-- Contact Page End  -->
     </div>
 
-    <!-- Contact Page End  -->
+    <div class="shopping-cart">
+        <div id="cartToggle" class="toggle-icon">
+            <span id="qty" class="qty">0</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div id="orderList" class="order-container">
+            <div class="labels">
+                <p class="label-name">Product name</p>
+                <p class="label-size">Size</p>
+                <p class="label-qty">QTY</p>
+                <p class="label-price">Price</p>
+            </div>
+            <div id="orders" class="orders"></div>
+            <div class="total">
+                <span>Total:</span>
+                <span id="total">₱0</span>
+            </div>
+        </div>
+        
+    </div>
 
     <!-- Scripts -->
     <script defer type="module" src="assets/script/GetData.js" async></script>
     <script defer type="module" src="assets/script/app.js" async></script>
     <script defer type="module" src="assets/script/featured.js" async></script>
     <script defer type="module" src="assets/script/products.js" async></script>
+    <script defer type="module" src="assets/script/orderList.js" async></script>
 
 </body>
 </html>

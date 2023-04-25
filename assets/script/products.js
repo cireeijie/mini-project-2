@@ -62,7 +62,6 @@ function productDisplay(id, name, image, prices, section) {
     cartBtn.classList.add('add-to-cart')
     cartBtn.setAttribute("id", id);
     cartBtn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
-    
     productContainer.appendChild(cartBtn);
 }
 
