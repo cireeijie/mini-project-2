@@ -61,7 +61,7 @@ aside {
 .admin-dashboard {
     width: 80%;
     height: 100vh;
-    background-image: url(/assets/images/bg.png);
+    background-image: url(../images/bg.png);
     background-size: cover;
     overflow: hidden;
     overflow-y: scroll;
