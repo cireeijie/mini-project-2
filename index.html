@@ -205,29 +205,74 @@
     </div>
 
     <div class="shopping-cart">
-        <div id="cartToggle" class="toggle-icon">
-            <span id="qty" class="qty">0</span>
-            <i class="shop-cart fa-solid fa-cart-shopping"></i>
+        <div class="checkout-form" id="checkoutForm">
+            <p class="form-title">Checkout Form</p>
+            <form action="#" method="#">
+                <div class="full-name">
+                    <input id="firstName" name="fname" type="text" placeholder="First Name" required>
+                    <input id="lastName" name="lname" type="text" placeholder="Last Name" required>
+                </div>
+                <div class="email">
+                    <input type="email" name="userEmail" id="userEmail" placeholder="Email" required>
+                </div>
+                <div class="payment-method">
+                    <label for="paymemntMethod">
+                        <input id="cod" type="radio" value="Cash on Delivery" name="paymemntMethod"required>
+                        <span>Cash on Delivery</span>
+                    </label>
+                    <label for="paymemntMethod">
+                        <input id="gCash" type="radio" value="GCash" name="paymemntMethod"required>
+                        <span>GCash</span>
+                    </label>
+                    <label for="paymemntMethod">
+                        <input id="payMaya" type="radio" value="PayMaya" name="paymemntMethod"required>
+                        <span>PayMaya</span>
+                    </label>
+                    <label for="paymemntMethod">
+                        <input id="debitCard" type="radio" value="Debit Card" name="paymemntMethod"required>
+                        <span>Debit Card</span>
+                    </label>
+                </div>
+                <div class="payment-detail">
+                    <p id="paymentMethod"></p>
+                    <input id="paymentInfo" type="text" required>
+                </div>
+                <div class="action-btns">
+                    <button type="submit" id="goCheckout">
+                        <span>Checkout</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <button id="closeForm">
+                        <span>Cancel</span>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </form>
         </div>
-        <div id="orderList" class="order-container">
-            <div class="labels">
-                <p class="label-name">Product name</p>
-                <p class="label-size">Size</p>
-                <p class="label-qty">QTY</p>
-                <p class="label-price">Price</p>
-                <i class="close-cart fa-solid fa-xmark"></i>
+        <div class="cart">
+            <div id="orderList" class="order-container">
+                <div class="labels">
+                    <p class="label-name">Product name</p>
+                    <p class="label-size">Size</p>
+                    <p class="label-qty">QTY</p>
+                    <p class="label-price">Price</p>
+                    <i class="close-cart fa-solid fa-xmark"></i>
+                </div>
+                <div id="orders" class="orders"></div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="total">₱0</span>
+                    <button id="checkoutBtn">
+                        <span>Checkout</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
             </div>
-            <div id="orders" class="orders"></div>
-            <div class="total">
-                <span>Total:</span>
-                <span id="total">₱0</span>
-                <button id="checkoutBtn">
-                    <span>Checkout</span>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </button>
+            <div id="cartToggle" class="toggle-icon">
+                <span id="qty" class="qty">0</span>
+                <i class="shop-cart fa-solid fa-cart-shopping"></i>
             </div>
         </div>
-        
     </div>
 
     <!-- Scripts -->

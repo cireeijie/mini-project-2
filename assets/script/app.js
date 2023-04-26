@@ -170,18 +170,114 @@ function updateCart() {
 
 updateCart()
 
+const openForm = document.querySelector('#checkoutBtn');
+const closeForm = document.querySelector('#closeForm');
+const checkOutForm = document.querySelector('#checkoutForm');
 const closeCart = document.querySelector('.close-cart');
 const openCart = document.querySelector('#cartToggle');
 const cart = document.querySelector('#orderList');
+const goCheckout = document.querySelector('#goCheckout');
 
 closeCart.addEventListener('click', () => {
-    cart.classList.remove('cart-visible');
+    cart.classList.remove('cart-animate');
+    openCart.classList.remove('to-back');
+    checkOutForm.classList.remove('show-form');
 })
 
 openCart.addEventListener('click', () => {
-    cart.classList.toggle('cart-visible');
+    cart.classList.toggle('cart-animate');
     openCart.classList.toggle('to-back');
+    checkOutForm.classList.add('show-form');
 });
 
 
 // Add to Cart End
+
+// Checkout form Start
+
+openForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    checkOutForm.classList.add('open-form');
+    openForm.classList.add('hide');
+});
+
+closeForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    checkOutForm.classList.remove('open-form');
+    openForm.classList.remove('hide');
+});
+
+const paymentMethods = document.querySelector('.payment-method');
+const paymentTitle = document.querySelector('#paymentMethod');
+
+let payment = '';
+
+paymentMethods.addEventListener('click', (e) => {
+    if(e.target.id == 'cod') {
+        paymentTitle.innerHTML = 'Please enter your address';
+        payment = e.target.value;
+    }
+
+    if(e.target.id == 'gCash') {
+        paymentTitle.innerHTML = 'Please enter your GCash info';
+        payment = e.target.value;
+    }
+
+    if(e.target.id == 'payMaya') {
+        paymentTitle.innerHTML = 'Please enter your PayMaya info';
+        payment = e.target.value;
+    }
+
+    if(e.target.id == 'debitCard') {
+        paymentTitle.innerHTML = 'Please enter your debit card info';
+        payment = e.target.value;
+    }
+
+});
+
+let customers = JSON.parse(localStorage.getItem('customers'));
+
+if(customers == null) {
+    customers = [];
+}
+
+console.log(customers);
+
+goCheckout.addEventListener('click', () => {
+    const firstName = document.querySelector('#firstName');
+    const lastName = document.querySelector('#lastName');
+    const userEmail = document.querySelector('#userEmail');
+    const paymentInfo = document.querySelector('#paymentInfo');
+    const userOrders = document.querySelector('#orders');
+
+    let checkoutInfo = {
+        firstname: firstName.value,
+        lastname: lastName.value,
+        email: userEmail.value,
+        payment: payment,
+        paymentinfo: paymentInfo.value,
+        orders: []
+    };
+
+    userOrders.childNodes.forEach(order => {
+        let orderDetail = [];
+        order.childNodes.forEach(item => {
+            if(item.classList[0] != 'delete-btn') {
+                if(item.classList == 'quantity') {
+                    orderDetail.push(item.value);
+                }
+                else {
+                    orderDetail.push(item.innerText);
+                }
+            }
+        })
+        checkoutInfo.orders.push(orderDetail);
+    });
+    
+    customers.push(checkoutInfo);
+    localStorage.setItem('customers', JSON.stringify(customers));
+})
+
+// Checkout form End
+
+
