@@ -5,8 +5,8 @@ let caretUp = document.querySelector("#caretUp");
 const adminLogout = document.querySelector('#logout');
 
 // Redirect if not logged in
+const auth = localStorage.getItem('isAuthorized')
 window.onload = () => {
-    let auth = localStorage.getItem('isAuthorized')
     if(auth == 'false') {
         window.location.assign('index.html');
         alert("You are not authorized! Please login.");

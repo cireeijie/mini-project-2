@@ -9,8 +9,6 @@ const loginModal = document.querySelector('#loginModal');
 const adminUsername = document.querySelector('#adminUsername');
 const adminPass = document.querySelector('#adminPass');
 
-localStorage.setItem('isAuthorized', false);
-
 // Show Login Modal
 window.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' && e.ctrlKey) {
@@ -27,13 +25,11 @@ loginModal.addEventListener('click', (e) => {
     if(e.target.id == 'loginBtn') {
         let adminUser = adminUsername.value;
         let adminPassword = adminPass.value;
-
-        console.log(adminUser)
-        console.log(adminPassword)
         
         if(adminUser == 'admin' && adminPassword == 'incorrect') {
-            window.location.assign('admin.html');
+            e.preventDefault()
             localStorage.setItem('isAuthorized', true);
+            window.location.assign('admin.html');
             alert('Login Success!');
         }
         else {
@@ -42,7 +38,6 @@ loginModal.addEventListener('click', (e) => {
         }
     }
 });
-
 
 // Shop Page JS Start
 const loadShopPage = async () => {
@@ -273,8 +268,6 @@ let customers = JSON.parse(localStorage.getItem('customers'));
 if(customers == null) {
     customers = [];
 }
-
-console.log(customers);
 
 goCheckout.addEventListener('click', (e) => {
     const firstName = document.querySelector('#firstName');
