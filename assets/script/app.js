@@ -9,8 +9,6 @@ const loginModal = document.querySelector('#loginModal');
 const adminUsername = document.querySelector('#adminUsername');
 const adminPass = document.querySelector('#adminPass');
 
-localStorage.setItem('isAuthorized', false);
-
 // Show Login Modal
 window.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' && e.ctrlKey) {
@@ -25,6 +23,7 @@ loginModal.addEventListener('click', (e) => {
     }
     
     if(e.target.id == 'loginBtn') {
+        localStorage.setItem('isAuthorized', false);
         let adminUser = adminUsername.value;
         let adminPassword = adminPass.value;
 
