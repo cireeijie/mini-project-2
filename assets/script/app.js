@@ -210,28 +210,37 @@ closeForm.addEventListener('click', (e) => {
 
 const paymentMethods = document.querySelector('.payment-method');
 const paymentTitle = document.querySelector('#paymentMethod');
+const paymentInput = document.querySelector('#paymentInfo');
 
 let payment = '';
 
 paymentMethods.addEventListener('click', (e) => {
     if(e.target.id == 'cod') {
-        paymentTitle.innerHTML = 'Please enter your address';
+        paymentInput.classList.remove('show-payment');
+        paymentInput.setAttribute('required', false);
+        paymentTitle.innerHTML = 'Delivery fee applies depending on your address.';
         payment = e.target.value;
     }
 
     if(e.target.id == 'gCash') {
+        paymentInput.classList.add('show-payment');
         paymentTitle.innerHTML = 'Please enter your GCash info';
         payment = e.target.value;
+        paymentInput.setAttribute('required', true);
     }
 
     if(e.target.id == 'payMaya') {
+        paymentInput.classList.add('show-payment');
         paymentTitle.innerHTML = 'Please enter your PayMaya info';
         payment = e.target.value;
+        paymentInput.setAttribute('required', true);
     }
 
     if(e.target.id == 'debitCard') {
+        paymentInput.classList.add('show-payment');
         paymentTitle.innerHTML = 'Please enter your debit card info';
         payment = e.target.value;
+        paymentInput.setAttribute('required', true);
     }
 
 });
@@ -248,6 +257,7 @@ goCheckout.addEventListener('click', (e) => {
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
     const userEmail = document.querySelector('#userEmail');
+    const userAddress = document.querySelector('#userAddress');
     const paymentInfo = document.querySelector('#paymentInfo');
     const userOrders = document.querySelector('#orders');
     
@@ -260,11 +270,16 @@ goCheckout.addEventListener('click', (e) => {
             firstname: firstName.value,
             lastname: lastName.value,
             email: userEmail.value,
+            address: userAddress.value,
             payment: payment,
             paymentinfo: paymentInfo.value,
             orders: []
         };
-    
+        
+        if(payment == 'Cash on Delivery') {
+            checkoutInfo.paymentinfo = 'Cash on Delivery';
+        }
+
         userOrders.childNodes.forEach(order => {
             let orderDetail = [];
             order.childNodes.forEach(item => {

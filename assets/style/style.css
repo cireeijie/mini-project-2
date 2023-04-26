@@ -779,11 +779,20 @@ form input {
     width: 100%;
 }
 
+.shopping-cart .checkout-form .address input{
+    width: 100%;
+}
+
 .shopping-cart .checkout-form .payment-method {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10px;
     font-size: 12px;
+}
+
+.shopping-cart .checkout-form .payment-method .payments {
+    display: flex;
+    gap: 10px;
 }
 
 .shopping-cart .checkout-form .payment-method label {
@@ -801,8 +810,13 @@ form input {
 }
 
 .shopping-cart .checkout-form .payment-detail input {
+    display: none;
     width: 100%;
-} 
+}
+
+.show-payment {
+    display: block !important;
+}
 
 .shopping-cart .checkout-form form .action-btns {
     margin-top: 10px;

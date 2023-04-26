@@ -39,11 +39,6 @@
                         <li class="menu-item">
                             <a href="#contactPage">Contact Us</a>
                         </li>
-                        <li class="menu-item">
-                            <a href="">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -60,11 +55,6 @@
                         </li>
                         <li class="menu-item">
                             <a href="#contactPage">Contact Us</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
                         </li>
                     </ul>
                 </div>
@@ -215,23 +205,29 @@
                 <div class="email">
                     <input type="email" name="userEmail" id="userEmail" placeholder="Email" required>
                 </div>
+                <div class="address">
+                    <input type="text" name="userAddress" id="userAddress" placeholder="Address" required>
+                </div>
                 <div class="payment-method">
-                    <label for="paymemntMethod">
-                        <input id="cod" type="radio" value="Cash on Delivery" name="paymemntMethod"required>
-                        <span>Cash on Delivery</span>
-                    </label>
-                    <label for="paymemntMethod">
-                        <input id="gCash" type="radio" value="GCash" name="paymemntMethod"required>
-                        <span>GCash</span>
-                    </label>
-                    <label for="paymemntMethod">
-                        <input id="payMaya" type="radio" value="PayMaya" name="paymemntMethod"required>
-                        <span>PayMaya</span>
-                    </label>
-                    <label for="paymemntMethod">
-                        <input id="debitCard" type="radio" value="Debit Card" name="paymemntMethod"required>
-                        <span>Debit Card</span>
-                    </label>
+                    <p class="payment-title">Payment Method:</p>
+                    <div class="payments">
+                        <label for="paymemntMethod">
+                            <input id="cod" type="radio" value="Cash on Delivery" name="paymemntMethod" required>
+                            <span>Cash on Delivery</span>
+                        </label>
+                        <label for="paymemntMethod">
+                            <input id="gCash" type="radio" value="GCash" name="paymemntMethod" required>
+                            <span>GCash</span>
+                        </label>
+                        <label for="paymemntMethod">
+                            <input id="payMaya" type="radio" value="PayMaya" name="paymemntMethod" required>
+                            <span>PayMaya</span>
+                        </label>
+                        <label for="paymemntMethod">
+                            <input id="debitCard" type="radio" value="Debit Card" name="paymemntMethod" required>
+                            <span>Debit Card</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="payment-detail">
                     <p id="paymentMethod"></p>
