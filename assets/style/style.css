@@ -21,6 +21,11 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+a span,
+button span {
+    pointer-events: none;
+}
+
 .horizontal-scroll-container {
     display: grid;
     grid-template-columns: repeat(4, 100vw);
@@ -36,9 +41,53 @@ section {
     scroll-snap-align: start;
 }
 
-/* ::-webkit-scrollbar {
+/* login modal start */
+
+.login-modal {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1ec4;
+    z-index: 10000;
     display: none;
-} */
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container p {
+    margin-bottom: 10px;
+}
+
+.login-container form input {
+    background-color: #1e1e1e1e;
+    width: 100%;
+}
+
+.login-container form button {
+    border: none;
+    background-color: #C21807;
+    padding: 10px 20px;
+    color: white;
+    margin-top: 10px;
+}
+
+.login-container form button:hover {
+    cursor: pointer;
+}
+
+.show-login {
+    display: flex !important;
+}
+
+/* login modal end */
 
 /* Header Start */
 

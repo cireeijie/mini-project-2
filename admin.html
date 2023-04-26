@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7cfc1837b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/style/admin-style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="admin-dashboard-section">
+        <aside>
+            <div class="dashboard-title">
+                <span>Korean Delight Davao Dashboard</span>
+            </div>
+            <div class="dashboard-menu">
+                <div class="dashboard-menu-home">
+                    <i class="fa-solid fa-house"></i>
+                    <span><a href="admin.html" class="active">HOME</a></span>
+                </div>
+                <div class="dashboard-menu-products">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span><a href="products.html" id="productDashboard">PRODUCTS</a></span>
+                </div>
+                <div class="dashboard-menu-summary">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span><a href="#">SUMMARY</a></span>
+                </div>
+            </div>
+        </aside>
+        <div class="admin-dashboard">
+            <div class="admin-dashboard-nav">
+                <div class="admin-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchBar" placeholder="Search" >
+                </div>
+                <div class="admin-user">
+                    <div class="admin-user-profile" id="userProfile">
+                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-caret-down" id="caretDown"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard Orders Start -->
+            <div class="admin-dashboard-orders">
+                <div class="admin-live-orders">
+                    <span>Live Orders</span>
+                </div>
+                <div class="admin-order-containers">
+                    <div class="order-container">
+                        <div class="order-container-logo">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <div class="order-container-text">
+                            <div class="order-container-value">
+                                <span id="totalOrders">0</span>
+                            </div>
+                            <div class="order-container-status">
+                                <span>Order</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-container">
+                        <div class="order-container-logo">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="order-container-text">
+                            <div class="order-container-value">
+                                <span>0</span>
+                            </div>
+                            <div class="order-container-status">
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-container">
+                        <div class="order-container-logo">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div class="order-container-text">
+                            <div class="order-container-value">
+                                <span>0</span>
+                            </div>
+                            <div class="order-container-status">
+                                <span>Dispatched</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Admin Dashboard Orders End -->
+
+            <!-- Admin Dashboard List Order Start -->
+            <div class="admin-dashboard-list-order">
+                <div class="admin-list-order">
+                    <span>Orders</span>
+                </div>
+                <div class="admin-list-information"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+        <div class="dropdown-settings">
+        <a href="#">Acocunt Settings</a>
+        <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="dropdown-reports">
+        <a href="#">Notifications</a>
+        <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="dropdown-messages">
+        <a href="#">Messages</a>
+        <i class="fa-solid fa-message"></i>
+        </div>
+        <div id="logout" class="dropdown-logout">
+        <a href="#">Log Out</a>
+        <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+    </div>
+
+
+    <script src="assets/script/adminScript.js"></script>
+</body>
+</html>

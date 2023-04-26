@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.admin-dashboard-section {
+    height: 100vh;
+    display: flex;
+}
+aside {
+    width: 20%;
+    background-color: black;
+    height: 100%;
+}
+.dashboard-title {
+    width: 85%;
+    height: 13%;
+    display: flex;
+    align-items: end;
+    text-align: center;
+    margin: 0 auto;
+}
+.dashboard-title span {
+    color: red;
+    font-weight: 700;
+    font-size: 2rem;
+    font-family: 'Caveat', cursive;
+}
+.dashboard-menu {
+    color: white;
+    height: 45%;
+    text-align: center;
+    margin-top: 30px;
+}
+.dashboard-menu a {
+    text-decoration: none;
+    color: white;
+}
+.dashboard-menu-home, .dashboard-menu-products, .dashboard-menu-summary {
+    width: 100%;
+    height: 20%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.dashboard-menu-home i,
+.dashboard-menu-products i,
+.dashboard-menu-summary i {
+    color: red;
+}
+.dashboard-menu-home i {
+    position: relative;
+    top: -3px;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    width: 80%;
+    height: 100vh;
+    background-image: url(/assets/images/bg.png);
+    background-size: cover;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+}
+.admin-dashboard-nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.admin-search-bar {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.admin-search-bar i {
+    color: black;
+    position: absolute;
+    right: 45px;
+    cursor: pointer;
+}
+#searchBar {
+    padding: 7px 10px 7px 10px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}
+.admin-message-notif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    gap: 20px;
+}
+.admin-message-notif i {
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.admin-user {
+    width: 200px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    
+}
+.admin-user-name {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    font-size: 0.7rem;
+    position: relative;
+    left: 30px;
+    padding-bottom: 8px;
+}
+.admin-user-name span:nth-child(2) {
+    font-size: 0.5rem;
+}
+.admin-user-profile {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 3px red solid;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto 0;
+    position: relative;
+}
+.admin-user-profile i:nth-child(1) {
+    font-size: 1.7rem;
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+}
+.admin-user-profile i:nth-child(2) {
+    color: white;
+    position: absolute;
+    top: 35px;
+    right: -2px;
+    cursor: pointer;
+    border: 2px white solid;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rotate-caret {
+    transform: rotate(180deg);
+    transition: all 0.3 ease;
+}
+
+/* Admin Dashboard Orders Start*/
+.admin-live-orders {
+    width: 200px;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.admin-order-containers {
+    width: 80%;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.order-container {
+    color: white;
+    border: 3px red solid;
+    border-radius: 10px;
+    display: flex;
+    width: 250px;
+    height: 110px;
+}
+.order-container-logo {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: red;
+}
+.order-container-text {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-container-value, .order-container-status {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+.order-container-value {
+    height: 60%;
+}
+.order-container-status span {
+    font-size: 1.5rem;
+}
+/* Admin Dashboard Orders End */
+
+/* Admin Dashboard List Order Start */
+.admin-dashboard-list-order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-list-order {
+    align-self: flex-start;
+    width: 150px;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.admin-list-information {
+    width: 90%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+}
+
+.customers-order-container {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.user-image {
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.customer-id {
+    font-weight: 900;
+    font-size: 14px;
+    color: #C21807;
+}
+
+.customer-name {
+    font-size: 12px;
+}
+
+.customer-orders {
+    font-size: 10px;
+    padding: 5px 0;
+}
+
+.p-method, 
+.p-info {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 75px;
+    border: 3px white solid;
+    border-radius: 5px;
+    display: none;
+}
+.dropdown-settings, .dropdown-reports, .dropdown-messages, .dropdown-logout  {
+    font-size: 0.8rem;
+    border: 1px red solid;
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-settings {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.dropdown-logout {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.dropdown-settings a, .dropdown-reports a, .dropdown-messages a, .dropdown-logout a {
+    text-decoration: none;
+    color: black;
+}
+.dropdown-settings i, .dropdown-reports i, .dropdown-messages i, .dropdown-logout i {
+    color: black;
+}
+.dropdown-settings:hover, .dropdown-reports:hover, .dropdown-messages:hover, .dropdown-logout:hover {
+    background-color: rgb(252, 90, 90);
+    transition: all 0.5s ease;
+}
+.displayMenu {
+    display: flex;
+    transition: all 1s ease;
+}
+
+
+
+/* Admin Dashboard Products Start */
+.products-section {
+    height: 80%;
+}
+.products-categories {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#productCategory {
+    border-radius: 10px;
+    width: 150px;
+    outline: 0;
+    border: 0;
+    padding: 7px;
+}
+.list-of-products {
+    height: 95%;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    overflow-y: auto;
+}
+.product-container {
+    border: 1px white solid;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
+.product-image {
+    height: 60%;
+    width: 100%;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    border-radius: 10px;
+}
+.product-name {
+    height: 20%;
+    width: 100%;
+    color: red;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.product-sizes-prices {
+    height: 20%;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 10px;
+    font-size: 0.75rem;
+}
+
+/* Clicking the Page */
+.dashboard-menu-home .active {
+    border-bottom: 3px white solid;
+}
+.dashboard-menu-products .active {
+    border-bottom: 3px white solid;
+}
+
+.displayNone {
+    display: none;
+}

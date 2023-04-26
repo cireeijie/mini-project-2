@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7cfc1837b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/style/admin-style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="admin-dashboard-section">
+        <aside>
+            <div class="dashboard-title">
+                <span>Korean Delight Davao Dashboard</span>
+            </div>
+            <div class="dashboard-menu">
+                <div class="dashboard-menu-home">
+                    <i class="fa-solid fa-house"></i>
+                    <span><a href="admin.html">HOME</a></span>
+                </div>
+                <div class="dashboard-menu-products">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span><a href="products.html" class="active" id="productDashboard">PRODUCTS</a></span>
+                </div>
+                <div class="dashboard-menu-summary">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span><a href="#">SUMMARY</a></span>
+                </div>
+            </div>
+        </aside>
+        <div class="admin-dashboard">
+            <div class="admin-dashboard-nav">
+                <div class="admin-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchBar" placeholder="Search">
+                </div>
+                <div class="admin-user">
+                    <div class="admin-user-profile" id="userProfile">
+                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-caret-down" id="caretDown"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard Products Start -->
+            <div class="products-section">
+                
+                <div class="products-categories">
+                    <select name="productCategory" id="productCategory">
+                        <option value="All Categories"selected>All Categories</option>
+                        <option value="Best Seller">Best Seller</option>
+                        <option value="Rice Meals">Rice Meals</option>
+                        <option value="Kimbap">Kimbap</option>
+                    </select>
+                </div>
+                <div class="list-of-products">
+                    <!-- Product 1 -->
+                    <div class="product-container" id="kimbap">
+                        <div class="product-image">
+                            <img src="./assets/images/products/kimbap/kimbap-3.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Baked Spam Kimbap</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Small, Medium</span>
+                            <span>Prices: ₱150, ₱300</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-container" id="kimbap">
+                        <div class="product-image">
+                            <img src="./assets/images/products/kimbap/kimbap-4.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Baked Spicy Tuna Kimbap</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Small, Medium</span>
+                            <span>Prices: ₱150, ₱300</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-container" id="riceMeals">
+                        <div class="product-image">
+                            <img src="./assets/images/products/ricemeals/rice-4.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Beef Bulgogi</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱99</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-container" id="riceMeals">
+                        <div class="product-image">
+                            <img src="./assets/images/products/ricemeals/rice-5.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Bibimbap</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱120</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-container" id="riceMeals">
+                        <div class="product-image">
+                            <img src="./assets/images/products/ricemeals/rice-2.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Cheese Buldak</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱69</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-container" id="kimbap">
+                        <div class="product-image">
+                            <img src="./assets/images/products/kimbap/kimbap-1.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Chicken Kimbap</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱120</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-container" id="riceMeals">
+                        <div class="product-image">
+                            <img src="./assets/images/products/ricemeals/rice-1.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Dakgangjeong</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱59</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-container" id="riceMeals">
+                        <div class="product-image">
+                            <img src="./assets/images/products/ricemeals/rice-3.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Pork Bulgogi</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱89</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-container" id="kimbap">
+                        <div class="product-image">
+                            <img src="./assets/images/products/kimbap/kimbap-2.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Spam Kimbap</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Regular</span>
+                            <span>Prices: ₱120</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-container" id="bestSeller">
+                        <div class="product-image">
+                            <img src="./assets/images/products/tteokbokki.png" alt="">
+                        </div>
+                        <div class="product-name">
+                            <span>Tteokbokki</span>
+                        </div>
+                        <div class="product-sizes-prices">
+                            <span>Sizes: Small, Medium</span>
+                            <span>Prices: ₱200, ₱300</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+        <div class="dropdown-settings">
+            <a href="#">Acocunt Settings</a>
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="dropdown-reports">
+            <a href="#">Notifications</a>
+            <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="dropdown-messages">
+            <a href="#">Messages</a>
+            <i class="fa-solid fa-message"></i>
+        </div>
+        <div class="dropdown-logout">
+            <a href="#">Log Out</a>
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+    </div>
+
+
+    <script src="assets/script/adminScript.js"></script>
+</body>
+
+</html>

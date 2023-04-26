@@ -3,22 +3,45 @@ import featuredProduct from "./featured.js"
 import productDisplay from "./products.js"
 import addToCart from "./orderList.js";
 
-// Navbar JS Start
-const navbar = document.querySelector('#navBar');
-let top = navbar.offsetTop;
+// Login Modal
 
-function stickyNavBar() {
-    if(window.scrollY > top) {
-        navbar.classList.add('sticky');
+const loginModal = document.querySelector('#loginModal');
+const adminUsername = document.querySelector('#adminUsername');
+const adminPass = document.querySelector('#adminPass');
+
+localStorage.setItem('isAuthorized', false);
+
+// Show Login Modal
+window.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' && e.ctrlKey) {
+        loginModal.classList.add('show-login');
+    };
+});
+
+// Hide login Modal
+loginModal.addEventListener('click', (e) => {
+    if(e.target.classList[0] == 'login-modal') {
+        loginModal.classList.remove('show-login');
     }
-    else {
-        navbar.classList.remove('sticky');
+    
+    if(e.target.id == 'loginBtn') {
+        let adminUser = adminUsername.value;
+        let adminPassword = adminPass.value;
+
+        console.log(adminUser)
+        console.log(adminPassword)
+        
+        if(adminUser == 'admin' && adminPassword == 'incorrect') {
+            window.location.assign('admin.html');
+            localStorage.setItem('isAuthorized', true);
+            alert('Login Success!');
+        }
+        else {
+            e.preventDefault();
+            alert('Your password is incorrect');
+        }
     }
-}
-
-window.addEventListener('scroll', stickyNavBar);
-
-// Navbar Js End
+});
 
 
 // Shop Page JS Start
@@ -217,7 +240,7 @@ let payment = '';
 paymentMethods.addEventListener('click', (e) => {
     if(e.target.id == 'cod') {
         paymentInput.classList.remove('show-payment');
-        paymentInput.setAttribute('required', false);
+        paymentInput.removeAttribute('required');
         paymentTitle.innerHTML = 'Delivery fee applies depending on your address.';
         payment = e.target.value;
     }
@@ -260,6 +283,14 @@ goCheckout.addEventListener('click', (e) => {
     const userAddress = document.querySelector('#userAddress');
     const paymentInfo = document.querySelector('#paymentInfo');
     const userOrders = document.querySelector('#orders');
+
+    let getCustomers = JSON.parse(localStorage.getItem('customers'));
+    if(getCustomers == null) {
+        getCustomers = []
+    }
+
+    const maxId = 9999999;
+    let customerId = parseInt(Math.abs(Math.random() * maxId));
     
     if(userOrders.childNodes.length == 0) {
         alert("Your cart is empty!");
@@ -267,6 +298,7 @@ goCheckout.addEventListener('click', (e) => {
     }
     else {
         let checkoutInfo = {
+            id: customerId,
             firstname: firstName.value,
             lastname: lastName.value,
             email: userEmail.value,
@@ -301,6 +333,7 @@ goCheckout.addEventListener('click', (e) => {
         localStorage.setItem('orders', null);
     }
 })
+
 
 // Checkout form End
 
