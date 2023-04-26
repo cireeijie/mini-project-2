@@ -159,6 +159,7 @@ updatePrice();
 
 function updateCart() {
     const kids = orderItems.childElementCount;
+    
     for(let i = 0; i < kids; i++) {
         orderItems.firstChild.remove();
     }
@@ -243,39 +244,47 @@ if(customers == null) {
 
 console.log(customers);
 
-goCheckout.addEventListener('click', () => {
+goCheckout.addEventListener('click', (e) => {
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
     const userEmail = document.querySelector('#userEmail');
     const paymentInfo = document.querySelector('#paymentInfo');
     const userOrders = document.querySelector('#orders');
-
-    let checkoutInfo = {
-        firstname: firstName.value,
-        lastname: lastName.value,
-        email: userEmail.value,
-        payment: payment,
-        paymentinfo: paymentInfo.value,
-        orders: []
-    };
-
-    userOrders.childNodes.forEach(order => {
-        let orderDetail = [];
-        order.childNodes.forEach(item => {
-            if(item.classList[0] != 'delete-btn') {
-                if(item.classList == 'quantity') {
-                    orderDetail.push(item.value);
-                }
-                else {
-                    orderDetail.push(item.innerText);
-                }
-            }
-        })
-        checkoutInfo.orders.push(orderDetail);
-    });
     
-    customers.push(checkoutInfo);
-    localStorage.setItem('customers', JSON.stringify(customers));
+    if(userOrders.childNodes.length == 0) {
+        alert("Your cart is empty!");
+        e.preventDefault();
+    }
+    else {
+        let checkoutInfo = {
+            firstname: firstName.value,
+            lastname: lastName.value,
+            email: userEmail.value,
+            payment: payment,
+            paymentinfo: paymentInfo.value,
+            orders: []
+        };
+    
+        userOrders.childNodes.forEach(order => {
+            let orderDetail = [];
+            order.childNodes.forEach(item => {
+                if(item.classList[0] != 'delete-btn') {
+                    if(item.classList == 'quantity') {
+                        orderDetail.push(item.value);
+                    }
+                    else {
+                        orderDetail.push(item.innerText);
+                    }
+                }
+            })
+            checkoutInfo.orders.push(orderDetail);
+        });
+        
+        customers.push(checkoutInfo);
+        localStorage.setItem('customers', JSON.stringify(customers));
+
+        localStorage.setItem('orders', null);
+    }
 })
 
 // Checkout form End
