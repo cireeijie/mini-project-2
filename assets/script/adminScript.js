@@ -7,6 +7,7 @@ const adminLogout = document.querySelector('#logout');
 // Redirect if not logged in
 window.onload = () => {
     let auth = localStorage.getItem('isAuthorized')
+    console.log(auth)
     if(auth == 'false') {
         window.location.assign('index.html');
         alert("You are not authorized! Please login.");
