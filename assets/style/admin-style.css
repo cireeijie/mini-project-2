@@ -9,6 +9,11 @@
     height: 100vh;
     display: flex;
 }
+
+a {
+    text-decoration: none;
+}
+
 aside {
     width: 20%;
     background-color: black;

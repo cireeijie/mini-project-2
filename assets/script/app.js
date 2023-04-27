@@ -11,13 +11,22 @@ const adminPass = document.querySelector('#adminPass');
 
 // Show Login Modal
 window.addEventListener('keydown', (e) => {
+    let auth = localStorage.getItem('isAuthorized');
+
     if(e.key === 'Enter' && e.ctrlKey) {
         loginModal.classList.add('show-login');
+
+        if(auth == 'true') {
+            window.location.assign('admin.html');
+            alert('You are already logged in. Redirecting to admin page...');
+        }
     };
 });
 
 // Hide login Modal
 loginModal.addEventListener('click', (e) => {
+    
+
     if(e.target.classList[0] == 'login-modal') {
         loginModal.classList.remove('show-login');
     }
@@ -26,6 +35,7 @@ loginModal.addEventListener('click', (e) => {
         let adminUser = adminUsername.value;
         let adminPassword = adminPass.value;
         
+
         if(adminUser == 'admin' && adminPassword == 'incorrect') {
             e.preventDefault()
             localStorage.setItem('isAuthorized', true);
