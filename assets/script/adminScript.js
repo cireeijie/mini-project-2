@@ -109,69 +109,98 @@ function displayOrders(id, firstname, lastname, orders, payment, paymentinfo ) {
 const ordersListener = document.querySelector('.admin-list-information');
 const sPending = document.querySelector('#pendingCircle');
 const sDispatched = document.querySelector('#dispatchedCircle');
+const totalPending = document.querySelector('#pendingOrders');
+const totalDispatched = document.querySelector('#dispatchedOrders');
+
+let cusOrder = JSON.parse(localStorage.getItem('customers'));
+
+let pendingOrders = [];
+localStorage.setItem('pendingOrders', JSON.stringify(pendingOrders));
+
+let dispatchedOrders = [];
+localStorage.setItem('pendingOrders', JSON.stringify(dispatchedOrders));
 
 ordersListener.addEventListener('click', (e) => {
-    let cusOrder = JSON.parse(localStorage.getItem('customers'));
+    let clicked = e.target.id.match(/\d/g);
+    if(clicked.length > 0) {
+        clicked = clicked.join('')
+    }
+    else {
+        clicked = '';
+    }
 
     if(cusOrder == null) {
         cusOrder = [];
     }
-
-    let pendingOrders = JSON.parse(localStorage.getItem('pendingOrders'));
-
+    
+    pendingOrders = JSON.parse(localStorage.getItem('pendingOrders'));
+    
     if(pendingOrders == null) {
         pendingOrders = [];
     }
-
-    let dispatchedOrders = JSON.parse(localStorage.getItem('dispatchedOrders'));
-
+    
+    dispatchedOrders = JSON.parse(localStorage.getItem('dispatchedOrders'));
+    
     if(dispatchedOrders == null) {
         dispatchedOrders = [];
     }
 
-    let clicked = e.target.id.match(/\d/g);
-    let getIdNumber = clicked.join('');
-
-    if(e.target.id == `statusPending${getIdNumber}`) {
-        let pendingCircle = document.querySelector(`#pendingCircle${getIdNumber}`);
-        let dispatchedCircle = document.querySelector(`#dispatchedCircle${getIdNumber}`);
+    if(e.target.id == `statusPending${clicked}`) {
+        let pendingCircle = document.querySelector(`#pendingCircle${clicked}`);
+        let dispatchedCircle = document.querySelector(`#dispatchedCircle${clicked}`);
         pendingCircle.classList.add('status-pending');
         dispatchedCircle.classList.remove('status-dispatched');
         
-        const getOrder = cusOrder.filter(order => order.id == getIdNumber);
-        const checkDispatchedOrders = dispatchedOrders.filter(order => order.id == getIdNumber);
-
-        if(checkDispatchedOrders.length === 0) {
-            let newDispatchedOrders = dispatchedOrders.filter(order => order.id != getIdNumber);
-            if(newDispatchedOrders.length == 0) {
-                newDispatchedOrders = []
-            }
-            pendingOrders.push(getOrder);
-
+        const getOrder = cusOrder.filter(order => order.id == clicked);
+        
+        if(pendingOrders.length == 0) {
+            pendingOrders.push(getOrder[0]);
             localStorage.setItem('pendingOrders', JSON.stringify(pendingOrders));
-            localStorage.setItem('dispatchedOrders', JSON.stringify(newDispatchedOrders));
+            totalPending.innerHTML = pendingOrders.length;
+            totalDispatched.innerHTML = dispatchedOrders.length;
+        }
+        else {
+            const filterPending = pendingOrders.filter(order => order.id != clicked)
+            filterPending.push(getOrder[0]);
+            localStorage.setItem('pendingOrders', JSON.stringify(filterPending));
+            totalPending.innerHTML = filterPending.length;
+            totalDispatched.innerHTML = dispatchedOrders.length;
+        }
+
+        if(dispatchedOrders.length > 0) {
+            const filterDispatched = dispatchedOrders.filter(order => order.id != clicked)
+            localStorage.setItem('dispatchedOrders', JSON.stringify(filterDispatched));
+            totalDispatched.innerHTML = filterDispatched.length;
         }
     }
 
-    if(e.target.id == `statusDispatched${getIdNumber}`) {
-        let pendingCircle = document.querySelector(`#pendingCircle${getIdNumber}`);
-        let dispatchedCircle = document.querySelector(`#dispatchedCircle${getIdNumber}`);
+    if(e.target.id == `statusDispatched${clicked}`) {
+        let pendingCircle = document.querySelector(`#pendingCircle${clicked}`);
+        let dispatchedCircle = document.querySelector(`#dispatchedCircle${clicked}`);
         pendingCircle.classList.remove('status-pending');
         dispatchedCircle.classList.add('status-dispatched');
         
-        const getOrder = cusOrder.filter(order => order.id == getIdNumber);
-        const checkPendOrders = pendingOrders.filter(order => order.id == getIdNumber);
+        const getOrder = cusOrder.filter(order => order.id == clicked);
 
-        if(checkPendOrders.length === 0) {
-            let newPendingOrders = pendingOrders.filter(order => order.id != getIdNumber);
-            console.log(newPendingOrders);
-            if(newPendingOrders.length == 0) {
-                newPendingOrders = [];
-            }
-            dispatchedOrders.push(getOrder);
-
-            localStorage.setItem('pendingOrders', JSON.stringify(newPendingOrders));
+        if(dispatchedOrders.length == 0) {
+            dispatchedOrders.push(getOrder[0]);
             localStorage.setItem('dispatchedOrders', JSON.stringify(dispatchedOrders));
-        } 
+            totalPending.innerHTML = pendingOrders.length;
+            totalDispatched.innerHTML = dispatchedOrders.length;
+        }
+        else {
+            const filterDispatched = dispatchedOrders.filter(order => order.id != clicked);
+            filterDispatched.push(getOrder[0]);
+            localStorage.setItem('dispatchedOrders', JSON.stringify(filterDispatched));
+            totalPending.innerHTML = pendingOrders.length;
+            totalDispatched.innerHTML = filterDispatched.length;
+        }
+
+        if(pendingOrders.length > 0) {
+            const filterPending = pendingOrders.filter(order => order.id != clicked);
+            localStorage.setItem('pendingOrders', JSON.stringify(filterPending))
+            totalPending.innerHTML = filterPending.length
+        }
     }
 })
+
