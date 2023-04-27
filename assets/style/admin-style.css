@@ -14,6 +14,16 @@ a {
     text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    
+}
+::-webkit-scrollbar-thumb {
+    background: #C21807;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
 aside {
     width: 20%;
     background-color: black;

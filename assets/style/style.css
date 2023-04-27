@@ -26,6 +26,15 @@ button span {
     pointer-events: none;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #C21807;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
 .horizontal-scroll-container {
     display: grid;
     grid-template-columns: repeat(4, 100vw);
